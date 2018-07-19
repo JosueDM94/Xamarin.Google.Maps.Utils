@@ -1,6 +1,7 @@
 # Xamarin.Google.Maps.Utils
 
-The library can be used as in the included samples. 
+The library can be used as in the included samples.
+
 Nuget plugin forXamarin platform can be downloaded from [Xamarin Google Maps Utils][nuget]
 
 **Note**
