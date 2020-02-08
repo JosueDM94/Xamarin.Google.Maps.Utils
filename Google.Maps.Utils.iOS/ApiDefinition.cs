@@ -9,99 +9,91 @@ using CoreLocation;
 namespace Google.Maps.Utils
 {
     // @protocol GMUClusterItem <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUClusterItem
     {
         // @required @property (readonly, nonatomic) CLLocationCoordinate2D position;
-        [Abstract]
+        // [Abstract]
         [Export("position")]
         CLLocationCoordinate2D Position { get; }
     }
 
-    interface IGMUClusterItem { }
-
     // @protocol GMUCluster <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUCluster
     {
         // @required @property (readonly, nonatomic) CLLocationCoordinate2D position;
-        [Abstract]
+        // [Abstract]
         [Export("position")]
         CLLocationCoordinate2D Position { get; }
 
         // @required @property (readonly, nonatomic) NSUInteger count;
-        [Abstract]
+        // [Abstract]
         [Export("count")]
         nuint Count { get; }
 
         // @required @property (readonly, nonatomic) NSArray<id<GMUClusterItem>> * _Nonnull items;
-        [Abstract]
+        // [Abstract]
         [Export("items")]
-        IGMUClusterItem[] Items { get; }
+        GMUClusterItem[] Items { get; }
     }
 
-    interface IGMUCluster{ }
 
     // @protocol GMUClusterAlgorithm <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUClusterAlgorithm
     {
         // @required -(void)addItems:(NSArray<id<GMUClusterItem>> * _Nonnull)items;
-        [Abstract]
+        // [Abstract]
         [Export("addItems:")]
-        void AddItems(IGMUClusterItem[] items);
+        void AddItems(GMUClusterItem[] items);
 
         // @required -(void)removeItem:(id<GMUClusterItem> _Nonnull)item;
-        [Abstract]
+        // [Abstract]
         [Export("removeItem:")]
-        void RemoveItem(IGMUClusterItem item);
+        void RemoveItem(GMUClusterItem item);
 
         // @required -(void)clearItems;
-        [Abstract]
+        // [Abstract]
         [Export("clearItems")]
         void ClearItems();
 
         // @required -(NSArray<id<GMUCluster>> * _Nonnull)clustersAtZoom:(float)zoom;
-        [Abstract]
+        // [Abstract]
         [Export("clustersAtZoom:")]
-        IGMUCluster[] ClustersAtZoom(float zoom);
+        GMUCluster[] ClustersAtZoom(float zoom);
     }
 
-    interface IGMUClusterAlgorithm { }
 
     // @protocol GMUClusterIconGenerator <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUClusterIconGenerator
     {
         // @required -(UIImage *)iconForSize:(NSUInteger)size;
-        [Abstract]
+        // [Abstract]
         [Export("iconForSize:")]
         UIImage IconForSize(nuint size);
     }
 
-    interface IGMUClusterIconGenerator{ }
-
     // @protocol GMUClusterRenderer <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUClusterRenderer
     {
         // @required -(void)renderClusters:(NSArray<id<GMUCluster>> * _Nonnull)clusters;
-        [Abstract]
+        // [Abstract]
         [Export("renderClusters:")]
-        void RenderClusters(IGMUCluster[] clusters);
+        void RenderClusters(GMUCluster[] clusters);
 
         // @required -(void)update;
-        [Abstract]
+        // [Abstract]
         [Export("update")]
         void Update();
     }
-
-    interface IGMUClusterRenderer { }
 
     // @protocol GMUClusterManagerDelegate <NSObject>
     [Protocol,Model]
@@ -110,11 +102,11 @@ namespace Google.Maps.Utils
     {
         // @optional -(BOOL)clusterManager:(GMUClusterManager * _Nonnull)clusterManager didTapCluster:(id<GMUCluster> _Nonnull)cluster;
         [Export("clusterManager:didTapCluster:")]
-        bool DidTapCluster(GMUClusterManager clusterManager, IGMUCluster cluster);
+        bool DidTapCluster(GMUClusterManager clusterManager, GMUCluster cluster);
 
         // @optional -(BOOL)clusterManager:(GMUClusterManager * _Nonnull)clusterManager didTapClusterItem:(id<GMUClusterItem> _Nonnull)clusterItem;
         [Export("clusterManager:didTapClusterItem:")]
-        bool DidTapClusterItem(GMUClusterManager clusterManager, IGMUClusterItem clusterItem);
+        bool DidTapClusterItem(GMUClusterManager clusterManager, GMUClusterItem clusterItem);
     }
 
     interface IGMUClusterManagerDelegate { }
@@ -126,17 +118,17 @@ namespace Google.Maps.Utils
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)mapView algorithm:(id<GMUClusterAlgorithm> _Nonnull)algorithm renderer:(id<GMUClusterRenderer> _Nonnull)renderer __attribute__((objc_designated_initializer));
         [Export("initWithMap:algorithm:renderer:")]
         [DesignatedInitializer]
-        IntPtr Constructor(MapView mapView, IGMUClusterAlgorithm algorithm, IGMUClusterRenderer renderer);
+        IntPtr Constructor(MapView mapView, GMUClusterAlgorithm algorithm, GMUClusterRenderer renderer);
 
         // @property (readonly, nonatomic) id<GMUClusterAlgorithm> _Nonnull algorithm;
         [Export("algorithm")]
-        IGMUClusterAlgorithm Algorithm { get; }
+        GMUClusterAlgorithm Algorithm { get; }
 
         [Wrap("WeakDelegate")]
         [NullAllowed]
         IGMUClusterManagerDelegate Delegate { get; }
 
-        // @property (readonly, nonatomic, weak) id<GMUClusterManagerDelegate> _Nullable delegate;
+        // @property (readonly, nonatomic, weak) id<IGMUClusterManagerDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
         IGMUClusterManagerDelegate WeakDelegate { get; }
 
@@ -154,15 +146,15 @@ namespace Google.Maps.Utils
 
         // -(void)addItem:(id<GMUClusterItem> _Nonnull)item;
         [Export("addItem:")]
-        void AddItem(IGMUClusterItem item);
+        void AddItem(GMUClusterItem item);
 
         // -(void)addItems:(NSArray<id<GMUClusterItem>> * _Nonnull)items;
         [Export("addItems:")]
-        void AddItems(IGMUClusterItem[] items);
+        void AddItems(GMUClusterItem[] items);
 
         // -(void)removeItem:(id<GMUClusterItem> _Nonnull)item;
         [Export("removeItem:")]
-        void RemoveItem(IGMUClusterItem item);
+        void RemoveItem(GMUClusterItem item);
 
         // -(void)clearItems;
         [Export("clearItems")]
@@ -174,8 +166,8 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUDefaultClusterIconGenerator : NSObject <GMUClusterIconGenerator>
-    [BaseType(typeof(NSObject))]
-    interface GMUDefaultClusterIconGenerator : GMUClusterIconGenerator
+    [BaseType(typeof(GMUClusterIconGenerator))]
+    interface GMUDefaultClusterIconGenerator
     {
         // -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets;
         [Export("initWithBuckets:")]
@@ -202,22 +194,22 @@ namespace Google.Maps.Utils
         // @optional -(GMSMarker * _Nullable)renderer:(id<GMUClusterRenderer> _Nonnull)renderer markerForObject:(id _Nonnull)object;
         [Export("renderer:markerForObject:")]
         [return: NullAllowed]
-        Marker MarkerForObject(IGMUClusterRenderer renderer, NSObject @object);
+        Marker MarkerForObject(GMUClusterRenderer renderer, NSObject @object);
 
         // @optional -(void)renderer:(id<GMUClusterRenderer> _Nonnull)renderer willRenderMarker:(GMSMarker * _Nonnull)marker;
         [Export("renderer:willRenderMarker:")]
-        void WillRenderMarker(IGMUClusterRenderer renderer, Marker marker);
+        void WillRenderMarker(GMUClusterRenderer renderer, Marker marker);
 
         // @optional -(void)renderer:(id<GMUClusterRenderer> _Nonnull)renderer didRenderMarker:(GMSMarker * _Nonnull)marker;
         [Export("renderer:didRenderMarker:")]
-        void DidRenderMarker(IGMUClusterRenderer renderer, Marker marker);
+        void DidRenderMarker(GMUClusterRenderer renderer, Marker marker);
     }
 
     interface IGMUClusterRendererDelegate { }
 
     // @interface GMUDefaultClusterRenderer : NSObject <GMUClusterRenderer>
-    [BaseType(typeof(NSObject))]
-    interface GMUDefaultClusterRenderer : GMUClusterRenderer
+    [BaseType(typeof(GMUClusterRenderer))]
+    interface GMUDefaultClusterRenderer
     {
         // @property (nonatomic) BOOL animatesClusters;
         [Export("animatesClusters")]
@@ -233,29 +225,27 @@ namespace Google.Maps.Utils
 
         // @property (nonatomic, weak) id<GMUClusterRendererDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
-        IGMUClusterRendererDelegate WeakDelegate { get; set; }
+        NSObject WeakDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithMapView:(GMSMapView * _Nonnull)mapView clusterIconGenerator:(id<GMUClusterIconGenerator> _Nonnull)iconGenerator;
         [Export("initWithMapView:clusterIconGenerator:")]
-        IntPtr Constructor(MapView mapView, IGMUClusterIconGenerator iconGenerator);
+        IntPtr Constructor(MapView mapView, GMUClusterIconGenerator iconGenerator);
 
         // -(BOOL)shouldRenderAsCluster:(id<GMUCluster> _Nonnull)cluster atZoom:(float)zoom;
         [Export("shouldRenderAsCluster:atZoom:")]
-        bool ShouldRenderAsCluster(IGMUCluster cluster, float zoom);
+        bool ShouldRenderAsCluster(GMUCluster cluster, float zoom);
     }
 
     // @protocol GMUGeometry <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUGeometry
     {
         // @required @property (readonly, nonatomic) NSString * _Nonnull type;
-        [Abstract]
+        // [Abstract]
         [Export("type")]
         string Type { get; }
     }
-
-    interface IGMUGeometry { }
 
     // @interface GMUStyle : NSObject
     [BaseType(typeof(NSObject))]
@@ -311,26 +301,24 @@ namespace Google.Maps.Utils
     }
 
     // @protocol GMUGeometryContainer <NSObject>
-    [Protocol,Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface GMUGeometryContainer
     {
         // @required @property (readonly, nonatomic) id<GMUGeometry> _Nonnull geometry;
-        [Abstract]
+        // [Abstract]
         [Export("geometry")]
-        IGMUGeometry Geometry { get; }
+        GMUGeometry Geometry { get; }
 
         // @required @property (nonatomic) GMUStyle * _Nullable style;
-        [Abstract]
+        // [Abstract]
         [NullAllowed, Export("style", ArgumentSemantic.Assign)]
         GMUStyle Style { get; set; }
     }
 
-    interface IGMUGeometryContainer { }
-
     // @interface GMUFeature : NSObject <GMUGeometryContainer>
-    [BaseType(typeof(NSObject))]
-    interface GMUFeature : IGMUGeometryContainer
+    [BaseType(typeof(GMUGeometryContainer))]
+    interface GMUFeature
     {
         // @property (readonly, nonatomic) NSString * _Nullable identifier;
         [NullAllowed, Export("identifier")]
@@ -346,7 +334,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithGeometry:(id<GMUGeometry> _Nonnull)geometry identifier:(NSString * _Nullable)identifier properties:(NSDictionary<NSString *,NSString *> * _Nullable)properties boundingBox:(GMSCoordinateBounds * _Nullable)boundingBox;
         [Export("initWithGeometry:identifier:properties:boundingBox:")]
-        IntPtr Constructor(IGMUGeometry geometry, [NullAllowed] string identifier, [NullAllowed] NSDictionary<NSString, NSString> properties, [NullAllowed] CoordinateBounds boundingBox);
+        IntPtr Constructor(GMUGeometry geometry, [NullAllowed] string identifier, [NullAllowed] NSDictionary<NSString, NSString> properties, [NullAllowed] CoordinateBounds boundingBox);
     }
 
     // @interface GMUGeoJSONParser : NSObject
@@ -355,7 +343,7 @@ namespace Google.Maps.Utils
     {
         // @property (readonly, nonatomic) NSArray<id<GMUGeometryContainer>> * _Nonnull features;
         [Export("features")]
-        IGMUGeometryContainer[] Features { get; }
+        GMUGeometryContainer[] Features { get; }
 
         // -(instancetype _Nonnull)initWithURL:(NSURL * _Nonnull)url;
         [Export("initWithURL:")]
@@ -375,16 +363,16 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUGeometryCollection : NSObject <GMUGeometry>
-    [BaseType(typeof(NSObject))]
-    interface GMUGeometryCollection : IGMUGeometry
+    [BaseType(typeof(GMUGeometry))]
+    interface GMUGeometryCollection
     {
         // @property (readonly, nonatomic) NSArray<id<GMUGeometry>> * _Nonnull geometries;
         [Export("geometries")]
-        IGMUGeometry[] Geometries { get; }
+        GMUGeometry[] Geometries { get; }
 
         // -(instancetype _Nonnull)initWithGeometries:(NSArray<id<GMUGeometry>> * _Nonnull)geometries;
         [Export("initWithGeometries:")]
-        IntPtr Constructor(IGMUGeometry[] geometries);
+        IntPtr Constructor(GMUGeometry[] geometries);
     }
 
     // @interface GMUGeometryRenderer : NSObject
@@ -393,11 +381,11 @@ namespace Google.Maps.Utils
     {
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)map geometries:(NSArray<id<GMUGeometryContainer>> * _Nonnull)geometries;
         [Export("initWithMap:geometries:")]
-        IntPtr Constructor(MapView map, IGMUGeometryContainer[] geometries);
+        IntPtr Constructor(MapView map, GMUGeometryContainer[] geometries);
 
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)map geometries:(NSArray<id<GMUGeometryContainer>> * _Nonnull)geometries styles:(NSArray<GMUStyle *> * _Nullable)styles;
         [Export("initWithMap:geometries:styles:")]
-        IntPtr Constructor(MapView map, IGMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles);
+        IntPtr Constructor(MapView map, GMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles);
 
         // -(void)render;
         [Export("render")]
@@ -434,14 +422,14 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUGridBasedClusterAlgorithm : NSObject <GMUClusterAlgorithm>
-    [BaseType(typeof(NSObject))]
-    interface GMUGridBasedClusterAlgorithm : GMUClusterAlgorithm
+    [BaseType(typeof(GMUClusterAlgorithm))]
+    interface GMUGridBasedClusterAlgorithm
     {
     }
 
     // @interface GMUGroundOverlay : NSObject <GMUGeometry>
-    [BaseType(typeof(NSObject))]
-    interface GMUGroundOverlay : IGMUGeometry
+    [BaseType(typeof(GMUGeometry))]
+    interface GMUGroundOverlay
     {
         // @property (readonly, nonatomic) CLLocationCoordinate2D northEast;
         [Export("northEast")]
@@ -474,7 +462,7 @@ namespace Google.Maps.Utils
     interface GQTPointQuadTreeItem
     {
         // @required -(GQTPoint)point;
-        [Abstract]
+        // [Abstract]
         [Export("point")]
         GQTPoint Point { get; }
     }
@@ -482,8 +470,8 @@ namespace Google.Maps.Utils
     interface IGQTPointQuadTreeItem { }
 
     // @interface GMUWeightedLatLng : NSObject <GQTPointQuadTreeItem>
-    [BaseType(typeof(NSObject))]
-    interface GMUWeightedLatLng : IGQTPointQuadTreeItem
+    [BaseType(typeof(GQTPointQuadTreeItem))]
+    interface GMUWeightedLatLng
     {
         // @property (readonly, nonatomic) float intensity;
         [Export("intensity")]
@@ -525,7 +513,7 @@ namespace Google.Maps.Utils
     {
         // @property (readonly, nonatomic) NSArray<id<GMUGeometryContainer>> * _Nonnull placemarks;
         [Export("placemarks")]
-        IGMUGeometryContainer[] Placemarks { get; }
+        GMUGeometryContainer[] Placemarks { get; }
 
         // @property (readonly, nonatomic) NSArray<GMUStyle *> * _Nonnull styles;
         [Export("styles")]
@@ -549,8 +537,8 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMULineString : NSObject <GMUGeometry>
-    [BaseType(typeof(NSObject))]
-    interface GMULineString : IGMUGeometry
+    [BaseType(typeof(GMUGeometry))]
+    interface GMULineString
     {
         // @property (readonly, nonatomic) GMSPath * _Nonnull path;
         [Export("path")]
@@ -562,14 +550,14 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUNonHierarchicalDistanceBasedAlgorithm : NSObject <GMUClusterAlgorithm>
-    [BaseType(typeof(NSObject))]
-    interface GMUNonHierarchicalDistanceBasedAlgorithm : GMUClusterAlgorithm
+    [BaseType(typeof(GMUClusterAlgorithm))]
+    interface GMUNonHierarchicalDistanceBasedAlgorithm
     {
     }
 
     // @interface GMUPlacemark : NSObject <GMUGeometryContainer>
-    [BaseType(typeof(NSObject))]
-    interface GMUPlacemark : IGMUGeometryContainer
+    [BaseType(typeof(GMUGeometryContainer))]
+    interface GMUPlacemark
     {
         // @property (readonly, nonatomic) NSString * _Nullable title;
         [NullAllowed, Export("title")]
@@ -585,12 +573,12 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithGeometry:(id<GMUGeometry> _Nullable)geometry title:(NSString * _Nullable)title snippet:(NSString * _Nullable)snippet style:(GMUStyle * _Nullable)style styleUrl:(NSString * _Nullable)styleUrl;
         [Export("initWithGeometry:title:snippet:style:styleUrl:")]
-        IntPtr Constructor([NullAllowed] IGMUGeometry geometry, [NullAllowed] string title, [NullAllowed] string snippet, [NullAllowed] GMUStyle style, [NullAllowed] string styleUrl);
+        IntPtr Constructor([NullAllowed] GMUGeometry geometry, [NullAllowed] string title, [NullAllowed] string snippet, [NullAllowed] GMUStyle style, [NullAllowed] string styleUrl);
     }
 
     // @interface GMUPoint : NSObject <GMUGeometry>
-    [BaseType(typeof(NSObject))]
-    interface GMUPoint : IGMUGeometry
+    [BaseType(typeof(GMUGeometry))]
+    interface GMUPoint
     {
         // @property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
         [Export("coordinate")]
@@ -602,8 +590,8 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUPolygon : NSObject <GMUGeometry>
-    [BaseType(typeof(NSObject))]
-    interface GMUPolygon : IGMUGeometry
+    [BaseType(typeof(GMUGeometry))]
+    interface GMUPolygon
     {
         // @property (readonly, nonatomic) NSArray<GMSPath *> * _Nonnull paths;
         [Export("paths")]
@@ -615,14 +603,14 @@ namespace Google.Maps.Utils
     }
 
     // @interface GMUSimpleClusterAlgorithm : NSObject <GMUClusterAlgorithm>
-    [BaseType(typeof(NSObject))]
-    interface GMUSimpleClusterAlgorithm : GMUClusterAlgorithm
+    [BaseType(typeof(GMUClusterAlgorithm))]
+    interface GMUSimpleClusterAlgorithm
     {
     }
 
     // @interface GMUStaticCluster : NSObject <GMUCluster>
-    [BaseType(typeof(NSObject))]
-    interface GMUStaticCluster : IGMUCluster
+    [BaseType(typeof(GMUCluster))]
+    interface GMUStaticCluster
     {
         // -(instancetype _Nonnull)initWithPosition:(CLLocationCoordinate2D)position __attribute__((objc_designated_initializer));
         [Export("initWithPosition:")]
@@ -639,15 +627,15 @@ namespace Google.Maps.Utils
 
         // @property (readonly, nonatomic) NSArray<id<GMUClusterItem>> * _Nonnull items;
         [Export("items")]
-        IGMUClusterItem[] Items { get; }
+        GMUClusterItem[] Items { get; }
 
         // -(void)addItem:(id<GMUClusterItem> _Nonnull)item;
         [Export("addItem:")]
-        void AddItem(IGMUClusterItem item);
+        void AddItem(GMUClusterItem item);
 
         // -(void)removeItem:(id<GMUClusterItem> _Nonnull)item;
         [Export("removeItem:")]
-        void RemoveItem(IGMUClusterItem item);
+        void RemoveItem(GMUClusterItem item);
     }
 
     // @interface GMUWrappingDictionaryKey : NSObject <NSCopying>
