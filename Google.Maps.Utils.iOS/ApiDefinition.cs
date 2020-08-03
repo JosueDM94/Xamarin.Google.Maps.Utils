@@ -216,7 +216,7 @@ namespace Google.Maps.Utils
     interface IGMUClusterRendererDelegate { }
 
     // @interface GMUDefaultClusterRenderer : NSObject <GMUClusterRenderer>
-    [BaseType(typeof(NSObject))]
+    [BaseType(typeof(GMUClusterRenderer), Name = "GMUDefaultClusterRenderer")]
     interface GMUDefaultClusterRenderer : GMUClusterRenderer
     {
         // @property (nonatomic) BOOL animatesClusters;
@@ -233,7 +233,7 @@ namespace Google.Maps.Utils
 
         // @property (nonatomic, weak) id<GMUClusterRendererDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
-        IGMUClusterRendererDelegate WeakDelegate { get; set; }
+        NSObject WeakDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithMapView:(GMSMapView * _Nonnull)mapView clusterIconGenerator:(id<GMUClusterIconGenerator> _Nonnull)iconGenerator;
         [Export("initWithMapView:clusterIconGenerator:")]
@@ -242,6 +242,15 @@ namespace Google.Maps.Utils
         // -(BOOL)shouldRenderAsCluster:(id<GMUCluster> _Nonnull)cluster atZoom:(float)zoom;
         [Export("shouldRenderAsCluster:atZoom:")]
         bool ShouldRenderAsCluster(IGMUCluster cluster, float zoom);
+
+        // @required -(void)update;
+        [Override]
+        [Export("update")]
+        void Update();
+
+        [Override]
+        [Export("renderClusters:")]
+        void RenderClusters(IGMUCluster[] clusters);
     }
 
     // @protocol GMUGeometry <NSObject>

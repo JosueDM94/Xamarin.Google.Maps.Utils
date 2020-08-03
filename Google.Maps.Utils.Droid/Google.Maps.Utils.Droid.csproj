@@ -13,8 +13,8 @@
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <AndroidClassParser>jar2xml</AndroidClassParser>
+    <AndroidClassParser>class-parse</AndroidClassParser>
+    <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,15 +39,11 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <AndroidStoreUncompressedFileExtensions></AndroidStoreUncompressedFileExtensions>
-    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <AndroidStoreUncompressedFileExtensions></AndroidStoreUncompressedFileExtensions>
     <MandroidI18n></MandroidI18n>
     <JavaMaximumHeapSize></JavaMaximumHeapSize>
     <AndroidKeyStore></AndroidKeyStore>
     <AndroidSigningStorePass></AndroidSigningStorePass>
-    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
     <AndroidFastDeploymentType>Assemblies</AndroidFastDeploymentType>
     <NoWarn></NoWarn>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -97,8 +93,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Additions\AboutAdditions.txt" />
-    <None Include="Jars\AboutJars.txt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="Jars\android-maps-utils-0.5.aar" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Additions\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />

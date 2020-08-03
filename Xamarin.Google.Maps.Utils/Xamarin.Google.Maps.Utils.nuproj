@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8D0A6D8B-CDDB-4A49-99CA-2E3A29721349}</ProjectGuid>
     <Description>Binding library of Google Maps Utility Library for Xamarin.Android and Xamarin.iOS</Description>
-    <PackageId>Xamarin.Google.Maps.Utils</PackageId>
+    <PackageId>Xamarin.GoogleMapsUtils</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Josué Díaz</Authors>
     <DevelopmentDependency>true</DevelopmentDependency>
@@ -17,7 +17,7 @@
     <AssemblyName>Xamarin.Google.Maps.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Owners>Josué Díaz</Owners>
-    <Copyright>Copyright Josué Díaz © 2018</Copyright>
+    <Copyright>Copyright Josué Díaz © 2020</Copyright>
     <PackageTags>Google Maps Utility Xamarin Xamarin.iOS Xamarin.Android</PackageTags>
     <Title>Xamarin.Google.Maps.Utils</Title>
     <NeutralLanguage>en-US</NeutralLanguage>
