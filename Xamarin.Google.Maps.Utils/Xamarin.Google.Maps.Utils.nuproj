@@ -7,7 +7,7 @@
     <ProjectGuid>{8D0A6D8B-CDDB-4A49-99CA-2E3A29721349}</ProjectGuid>
     <Description>Binding library of Google Maps Utility Library for Xamarin.Android and Xamarin.iOS</Description>
     <PackageId>Xamarin.GoogleMapsUtils</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Josué Díaz</Authors>
     <DevelopmentDependency>true</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -25,6 +25,11 @@
     <PackageProjectUrl>https://github.com/jdiaz94/Xamarin.Google.Maps.Utils</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/jdiaz94/Xamarin.Google.Maps.Utils/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/xamarin/GoogleApisForiOSComponents/master/icons/googleiosmaps_128x128.png</PackageIconUrl>
+    <PackageReleaseNotes>- Support PackageReference
+- Support AndroidX
+
+[iOS] GoogleMapsUtils =&gt; 2.1.0
+[Android] GoogleMapsUtils =&gt; 0.5</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +49,13 @@
     <ProjectReference Include="..\Google.Maps.Utils.Droid\Google.Maps.Utils.Droid.csproj">
       <Project>{C783863C-3134-4729-BDC7-7871F17A00E5}</Project>
       <Name>Google.Maps.Utils.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Google.Maps.Utils.AndroidX\Google.Maps.Utils.AndroidX.csproj">
+      <Project>{6CDB5AD6-8892-4ED1-BFE4-C1B6CA8D28BA}</Project>
+      <Name>Google.Maps.Utils.AndroidX</Name>
+      <SkipGetTargetFrameworkProperties></SkipGetTargetFrameworkProperties>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <AdditionalProperties></AdditionalProperties>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

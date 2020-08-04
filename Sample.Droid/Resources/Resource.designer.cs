@@ -998,19 +998,22 @@ namespace Sample.Droid
 			public const int kml_url = 2131427353;
 			
 			// aapt resource value: 0x7F0B001A
-			public const int medicare = 2131427354;
+			public const int maps_api_key = 2131427354;
 			
 			// aapt resource value: 0x7F0B001B
-			public const int medicare_url = 2131427355;
+			public const int medicare = 2131427355;
 			
 			// aapt resource value: 0x7F0B001C
-			public const int police_stations = 2131427356;
+			public const int medicare_url = 2131427356;
 			
 			// aapt resource value: 0x7F0B001D
-			public const int police_stations_url = 2131427357;
+			public const int police_stations = 2131427357;
 			
 			// aapt resource value: 0x7F0B001E
-			public const int status_bar_notification_info_overflow = 2131427358;
+			public const int police_stations_url = 2131427358;
+			
+			// aapt resource value: 0x7F0B001F
+			public const int status_bar_notification_info_overflow = 2131427359;
 			
 			static String()
 			{

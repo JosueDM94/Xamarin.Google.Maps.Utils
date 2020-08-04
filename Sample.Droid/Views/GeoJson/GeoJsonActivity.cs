@@ -2,15 +2,13 @@
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-
-using Org.Json;
 using Android.App;
-using Android.Widget;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using Android.Gms.Maps.Utils.Data;
 using Android.Gms.Maps.Utils.Data.GeoJson;
-
+using Android.Widget;
+using Org.Json;
 using Sample.Droid.Views.Base;
 
 namespace Sample.Droid.Views.GeoJson

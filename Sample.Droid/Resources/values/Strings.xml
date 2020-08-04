@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<resources>    
+<resources>
+    <string name="maps_api_key"></string>
     <string name="app_name">Maps Utils</string>
     <string name="input_text">Looking for…</string>
     <string name="button_send">Go!</string>

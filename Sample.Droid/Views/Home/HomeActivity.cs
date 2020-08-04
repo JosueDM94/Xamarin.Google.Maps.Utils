@@ -21,7 +21,7 @@ using Sample.Droid.Views.CustomMarkerClustering;
 
 namespace Sample.Droid.Views.Home
 {
-    [Activity(Label = "Xamarin Maps Utils",MainLauncher = true)]
+    [Activity(Label = "Xamarin Maps Utils", MainLauncher = true)]
     public class HomeActivity : Activity
     {
         private Button btnClustering,btnBigClustering,btnCustomClustering,btnDistance,btnGeoJson;
@@ -72,6 +72,7 @@ namespace Sample.Droid.Views.Home
 
         private void AddEventHandlers()
         {
+            HasMapKey();
             btnKml.Click += BtnKml_Click;
             btnHeatMap.Click += BtnHeatMap_Click;
             btnGeoJson.Click += BtnGeoJson_Click;
@@ -89,6 +90,7 @@ namespace Sample.Droid.Views.Home
 
         private void RemoveEventHandlers()
         {
+            HasMapKey();
             btnKml.Click -= BtnKml_Click;
             btnHeatMap.Click -= BtnHeatMap_Click;
             btnGeoJson.Click -= BtnGeoJson_Click;
@@ -180,6 +182,14 @@ namespace Sample.Droid.Views.Home
         {
             using (var intent = new Intent(this, typeof(CustomMarkerClusteringActivity)))
                 StartActivity(intent);
+        }
+
+        private void HasMapKey()
+        {
+            if (string.IsNullOrEmpty(GetString(Resource.String.maps_api_key)))
+            {
+                Toast.MakeText(this, "Add your own API key in demo/secure.properties as MAPS_API_KEY=YOUR_API_KEY", ToastLength.Long).Show();
+            }
         }
     }
 }
