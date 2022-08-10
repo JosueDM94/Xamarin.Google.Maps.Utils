@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Xamarin.Google.Maps.Utils</id>
+    <version>1.0.1</version>
+    <title>Xamarin.Google.Maps.Utils</title>
+    <authors>Josué Díaz</authors>
+    <owners>Josué Díaz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <icon>icon.png</icon>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/JosueDM94/Xamarin.Google.Maps.Utils</projectUrl>
+    <description>Set of Xamarin bindings of Google Maps Utility for Xamarin.Android and Xamarin.iOS</description>
+    <summary>Set of Xamarin bindings of Google Maps Utility for Xamarin.Android and Xamarin.iOS</summary>
+    <releaseNotes>Suppport AndroidX packages:
+[iOS] GoogleMapsUtils 2.1.0
+[Android] GoogleMapsUtils 0.6.0</releaseNotes>
+    <copyright>Copyright Josué Díaz © 2022</copyright>
+    <language>en-US</language>
+    <tags>xamarin, ios, android, google, maps, utils, utility, play services</tags>
+    <readme>README.md</readme>
+    <repository type="git" url="https://github.com/JosueDM94/Xamarin.Google.Maps.Utils" />
+    <developmentDependency>false</developmentDependency>
+    <dependencies>
+      <group targetFramework="MonoAndroid11.0">
+        <!--MonoAndroid dependencies go here-->
+        <dependency id="Xamarin.AndroidX.AppCompat" version="1.1.0.2" />
+        <dependency id="Xamarin.AndroidX.Collection" version="1.1.0.10" />
+        <dependency id="Xamarin.GooglePlayServices.Maps" version="117.0.0" />
+      </group>
+      <group targetFramework="Xamarin.iOS1.0">
+          <!--Xamarin.iOS10 dependencies go here-->
+          <dependency id="Xamarin.Build.Download" version="0.4.11" />
+          <dependency id="Xamarin.Google.iOS.Maps" version="2.4.0" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Java.Interop" targetFramework="MonoAndroid11.0" />
+      <frameworkAssembly assemblyName="Mono.Android" targetFramework="MonoAndroid11.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="MonoAndroid11.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="MonoAndroid11.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Drawing.Common.dll" targetFramework="Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="Xamarin.iOS" targetFramework="Xamarin.iOS1.0" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <!-- NuGet reference assemblies -->
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/LICENSE" target="LICENSE" />
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/icon.png" target="icon.png" />
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/README.md" target="README.md" />
+
+    <!-- iOS reference assemblies -->
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/Google.Maps.Utils.iOS.dll" target="lib/xamarinios10/Google.Maps.Utils.iOS.dll" />
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/Google.Maps.Utils.iOS.xml" target="lib/xamarinios10/Google.Maps.Utils.iOS.xml" />
+
+    <!-- Android reference assemblies -->
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/Google.Maps.Utils.Android.dll" target="lib/monoandroid11.0/Google.Maps.Utils.Android.dll" />
+    <file src="/Users/josuemanueldiasmayorga/Projects/Xamarin/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/Google.Maps.Utils.Android.xml" target="lib/monoandroid11.0/Google.Maps.Utils.Android.xml" />    
+  </files>
+</package>
