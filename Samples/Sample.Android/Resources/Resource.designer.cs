@@ -15,7 +15,7 @@ namespace Sample.Android
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.3.3.31")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -3065,97 +3065,37 @@ namespace Sample.Android
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int amu_ballon_gx_prefix = 2131558400;
+			public const int campus = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int amu_basic_folder = 2131558401;
+			public const int earthquakes = 2131558401;
 			
 			// aapt resource value: 0x7F0D0002
-			public const int amu_basic_placemark = 2131558402;
+			public const int earthquakes_with_usa = 2131558402;
 			
 			// aapt resource value: 0x7F0D0003
-			public const int amu_cdata = 2131558403;
+			public const int kmlgeometrytest = 2131558403;
 			
 			// aapt resource value: 0x7F0D0004
-			public const int amu_default_balloon = 2131558404;
+			public const int medicare = 2131558404;
 			
 			// aapt resource value: 0x7F0D0005
-			public const int amu_document_nest = 2131558405;
+			public const int police = 2131558405;
 			
 			// aapt resource value: 0x7F0D0006
-			public const int amu_draw_order_ground_overlay = 2131558406;
+			public const int radar_search = 2131558406;
 			
 			// aapt resource value: 0x7F0D0007
-			public const int amu_extended_data = 2131558407;
+			public const int south_london_line_geojson = 2131558407;
 			
 			// aapt resource value: 0x7F0D0008
-			public const int amu_ground_overlay = 2131558408;
+			public const int south_london_line_kml = 2131558408;
 			
 			// aapt resource value: 0x7F0D0009
-			public const int amu_ground_overlay_color = 2131558409;
+			public const int south_london_square_geojson = 2131558409;
 			
 			// aapt resource value: 0x7F0D000A
-			public const int amu_inline_style = 2131558410;
-			
-			// aapt resource value: 0x7F0D000B
-			public const int amu_multigeometry_placemarks = 2131558411;
-			
-			// aapt resource value: 0x7F0D000C
-			public const int amu_multiple_placemarks = 2131558412;
-			
-			// aapt resource value: 0x7F0D000D
-			public const int amu_nested_folders = 2131558413;
-			
-			// aapt resource value: 0x7F0D000E
-			public const int amu_nested_multigeometry = 2131558414;
-			
-			// aapt resource value: 0x7F0D000F
-			public const int amu_poly_style_boolean_alpha = 2131558415;
-			
-			// aapt resource value: 0x7F0D0010
-			public const int amu_poly_style_boolean_numeric = 2131558416;
-			
-			// aapt resource value: 0x7F0D0011
-			public const int amu_unknown_folder = 2131558417;
-			
-			// aapt resource value: 0x7F0D0012
-			public const int amu_unsupported = 2131558418;
-			
-			// aapt resource value: 0x7F0D0013
-			public const int amu_visibility_ground_overlay = 2131558419;
-			
-			// aapt resource value: 0x7F0D0014
-			public const int campus = 2131558420;
-			
-			// aapt resource value: 0x7F0D0015
-			public const int earthquakes = 2131558421;
-			
-			// aapt resource value: 0x7F0D0016
-			public const int earthquakes_with_usa = 2131558422;
-			
-			// aapt resource value: 0x7F0D0017
-			public const int kmlgeometrytest = 2131558423;
-			
-			// aapt resource value: 0x7F0D0018
-			public const int medicare = 2131558424;
-			
-			// aapt resource value: 0x7F0D0019
-			public const int police = 2131558425;
-			
-			// aapt resource value: 0x7F0D001A
-			public const int radar_search = 2131558426;
-			
-			// aapt resource value: 0x7F0D001B
-			public const int south_london_line_geojson = 2131558427;
-			
-			// aapt resource value: 0x7F0D001C
-			public const int south_london_line_kml = 2131558428;
-			
-			// aapt resource value: 0x7F0D001D
-			public const int south_london_square_geojson = 2131558429;
-			
-			// aapt resource value: 0x7F0D001E
-			public const int south_london_square_kml = 2131558430;
+			public const int south_london_square_kml = 2131558410;
 			
 			static Raw()
 			{
