@@ -35,7 +35,7 @@ A demo app that integrates Affirm is included in the repo. You may clone the [Gi
 - **KML** — displays KML data
 - **GeoJSON** — displays and styles GeoJSON data
 
-![Android Usage](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/6629704/f57bc6d8-c908-11e4-815a-0d909fe02f99.gif)
+![Android Usage](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/f57bc6d8-c908-11e4-815a-0d909fe02f99.gif)
 
 For more information, check out the detailed guide on the [Google Developers site][devsite-guide-android]. You can also view the generated [reference docs][javadoc] for a full list of classes and their methods.
 
@@ -47,12 +47,14 @@ For more information, check out the detailed guide on the [Google Developers sit
 - **Quadtree data structure** - indexes 2D geometry points and performs
 2D range queries
 
-![Quadtree data structure](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/16646253/77feeb96-446c-11e6-9ec1-19e12a7fb3ae.png)
+![Quadtree data structure](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/77feeb96-446c-11e6-9ec1-19e12a7fb3ae.png)
 
 - **Geometry libraries** - KML and GeoJSON rendering
-![Geometry libraries](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/25834988/ca7c3566-34be-11e7-8f07-16c3ae9de63a.png)
+
+![Geometry libraries](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/ca7c3566-34be-11e7-8f07-16c3ae9de63a.png)
 
 - **Heatmaps** - Heatmap rendering
+
 ![Heatmaps](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/30678820-54243eb6-9ed8-11e7-81b4-c1afe3df37b3.png)
 
 ## Customize cluster and item markers
@@ -70,20 +72,20 @@ As of version 2.0.0 we have added new features for rendering KML and GeoJSON inp
 
 The following screenshot shows a demo of a KML file being rendered on the map. See [KMLViewController][kmlviewcontroller] for how to use the new APIs.
 
-![KML](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/ca7c3566-34be-11e7-8f07-16c3ae9de63a.png)
+![KML and GeoJSON rendering](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/ca7c3566-34be-11e7-8f07-16c3ae9de63a.png)
 
 ## Heatmap rendering
 
-As of version 2.1.0 we have added new features for rendering heatmaps. 
+As of version 2.1.0 we have added new features for rendering heatmaps.
 Heatmaps make it easy for viewers to understand the distribution and relative intensity of data points on a map. Rather than placing a marker at each location, heatmaps use color to represent the distribution of the data.
 
 In the example below, red represents areas of high concentration of police stations in Victoria, Australia.
 
-![A map with a heatmap showing location of police stations](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/heatmap-ios.png)
+![Heatmap rendering](https://raw.githubusercontent.com/JosueDM94/Xamarin.Google.Maps.Utils/master/Assets/heatmap-ios.png)
+
 *A map with a heatmap showing location of police stations*
 
-For more information, check out the detailed guide on the
-[Google Developers site][devsite-guide-ios].
+For more information, check out the detailed guide on the [Google Developers site][devsite-guide-ios].
 
 [devsite-guide-ios]: https://developers.google.com/maps/documentation/ios-sdk/utility/
 [devsite-guide-android]: https://developers.google.com/maps/documentation/android-api/utility/
