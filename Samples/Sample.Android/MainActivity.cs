@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -40,7 +41,6 @@ namespace Sample.Android
             addDemo("Heatmaps with Places API", new MyClass(typeof(HeatmapsPlacesDemoActivity)));
             addDemo("GeoJSON Layer", new MyClass(typeof(GeoJsonDemoActivity)));
             addDemo("KML Layer Overlay", new MyClass(typeof(KmlDemoActivity)));
-            addDemo("Multi Layer", new MyClass(typeof(MultiLayerDemoActivity)));
         }
 
         private void addDemo(string demoName, Java.Lang.Object activityClass)
@@ -57,7 +57,7 @@ namespace Sample.Android
         public void OnClick(View v)
         {
             Type activityClass = (v.Tag as MyClass).Type;
-            StartActivity(new Intent(this, activityClass));
+            StartActivity(new Intent(this, activityClass));            
         }
 
         public class MyClass : Java.Lang.Object

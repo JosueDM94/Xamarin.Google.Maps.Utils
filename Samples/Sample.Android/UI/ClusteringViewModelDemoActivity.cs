@@ -45,7 +45,7 @@ namespace Sample.Android
 #pragma warning disable CS0618 // Type or member is obsolete
             WindowManager. DefaultDisplay.GetMetrics(metrics);
 #pragma warning restore CS0618 // Type or member is obsolete
-            //mViewModel.getAlgorithm().UpdateViewSize(metrics.WidthPixels, metrics.HeightPixels);
+            mViewModel.getAlgorithm().UpdateViewSize(metrics.WidthPixels, metrics.HeightPixels);
 
             mClusterManager = new ClusterManager(this, getMap());
             mClusterManager.Algorithm = mViewModel.getAlgorithm();

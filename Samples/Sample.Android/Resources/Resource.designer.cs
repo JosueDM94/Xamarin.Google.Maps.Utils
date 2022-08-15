@@ -2748,55 +2748,52 @@ namespace Sample.Android
 			public const int textView = 2131230892;
 			
 			// aapt resource value: 0x7F0800AD
-			public const int textViewTitle = 2131230893;
+			public const int time = 2131230893;
 			
 			// aapt resource value: 0x7F0800AE
-			public const int time = 2131230894;
+			public const int title = 2131230894;
 			
 			// aapt resource value: 0x7F0800AF
-			public const int title = 2131230895;
+			public const int titleDividerNoCustom = 2131230895;
 			
 			// aapt resource value: 0x7F0800B0
-			public const int titleDividerNoCustom = 2131230896;
+			public const int title_template = 2131230896;
 			
 			// aapt resource value: 0x7F0800B1
-			public const int title_template = 2131230897;
+			public const int top = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int top = 2131230898;
+			public const int topPanel = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int topPanel = 2131230899;
+			public const int @unchecked = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int @unchecked = 2131230900;
+			public const int uniform = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int uniform = 2131230901;
+			public const int up = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int up = 2131230902;
+			public const int useLogo = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int useLogo = 2131230903;
+			public const int visible_removing_fragment_view_tag = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int visible_removing_fragment_view_tag = 2131230904;
+			public const int webview = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int webview = 2131230905;
+			public const int wide = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int wide = 2131230906;
+			public const int window = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int window = 2131230907;
+			public const int withText = 2131230907;
 			
 			// aapt resource value: 0x7F0800BC
-			public const int withText = 2131230908;
-			
-			// aapt resource value: 0x7F0800BD
-			public const int wrap_content = 2131230909;
+			public const int wrap_content = 2131230908;
 			
 			static Id()
 			{
@@ -2973,61 +2970,58 @@ namespace Sample.Android
 			public const int custom_dialog = 2131427359;
 			
 			// aapt resource value: 0x7F0B0020
-			public const int custom_info_window = 2131427360;
+			public const int distance_demo = 2131427360;
 			
 			// aapt resource value: 0x7F0B0021
-			public const int distance_demo = 2131427361;
+			public const int geojson_demo = 2131427361;
 			
 			// aapt resource value: 0x7F0B0022
-			public const int geojson_demo = 2131427362;
+			public const int heatmaps_demo = 2131427362;
 			
 			// aapt resource value: 0x7F0B0023
-			public const int heatmaps_demo = 2131427363;
+			public const int kml_demo = 2131427363;
 			
 			// aapt resource value: 0x7F0B0024
-			public const int kml_demo = 2131427364;
+			public const int main = 2131427364;
 			
 			// aapt resource value: 0x7F0B0025
-			public const int main = 2131427365;
+			public const int map = 2131427365;
 			
 			// aapt resource value: 0x7F0B0026
-			public const int map = 2131427366;
+			public const int multi_profile = 2131427366;
 			
 			// aapt resource value: 0x7F0B0027
-			public const int multi_profile = 2131427367;
+			public const int notification_action = 2131427367;
 			
 			// aapt resource value: 0x7F0B0028
-			public const int notification_action = 2131427368;
+			public const int notification_action_tombstone = 2131427368;
 			
 			// aapt resource value: 0x7F0B0029
-			public const int notification_action_tombstone = 2131427369;
+			public const int notification_template_custom_big = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int notification_template_custom_big = 2131427370;
+			public const int notification_template_icon_group = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int notification_template_icon_group = 2131427371;
+			public const int notification_template_part_chronometer = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
-			public const int notification_template_part_chronometer = 2131427372;
+			public const int notification_template_part_time = 2131427372;
 			
 			// aapt resource value: 0x7F0B002D
-			public const int notification_template_part_time = 2131427373;
+			public const int places_demo = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int places_demo = 2131427374;
+			public const int select_dialog_item_material = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int select_dialog_item_material = 2131427375;
+			public const int select_dialog_multichoice_material = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int select_dialog_multichoice_material = 2131427376;
+			public const int select_dialog_singlechoice_material = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int select_dialog_singlechoice_material = 2131427377;
-			
-			// aapt resource value: 0x7F0B0032
-			public const int support_simple_spinner_dropdown_item = 2131427378;
+			public const int support_simple_spinner_dropdown_item = 2131427377;
 			
 			static Layout()
 			{
@@ -3086,16 +3080,7 @@ namespace Sample.Android
 			public const int radar_search = 2131558406;
 			
 			// aapt resource value: 0x7F0D0007
-			public const int south_london_line_geojson = 2131558407;
-			
-			// aapt resource value: 0x7F0D0008
-			public const int south_london_line_kml = 2131558408;
-			
-			// aapt resource value: 0x7F0D0009
-			public const int south_london_square_geojson = 2131558409;
-			
-			// aapt resource value: 0x7F0D000A
-			public const int south_london_square_kml = 2131558410;
+			public const int usa = 2131558407;
 			
 			static Raw()
 			{

@@ -11,9 +11,9 @@ namespace Sample.Android
 {
     public class ClusteringViewModel : ViewModel
     {
-        private NonHierarchicalDistanceBasedAlgorithm mAlgorithm = new NonHierarchicalDistanceBasedAlgorithm();
+        private NonHierarchicalViewBasedAlgorithm mAlgorithm = new NonHierarchicalViewBasedAlgorithm(0, 0);
 
-        public NonHierarchicalDistanceBasedAlgorithm getAlgorithm()
+        public NonHierarchicalViewBasedAlgorithm getAlgorithm()
         {
             return mAlgorithm;
         }
@@ -22,7 +22,7 @@ namespace Sample.Android
         {
             Stream inputStream = resources.OpenRawResource(Resource.Raw.radar_search);
             List<MyItem> items = new MyItemReader().read(inputStream);
-            //mAlgorithm.lock();
+            mAlgorithm.Lock();
             try
             {
                 for (int i = 0; i< 100; i++)
@@ -40,7 +40,7 @@ namespace Sample.Android
             }
             finally
             {
-                //mAlgorithm.unlock();
+                mAlgorithm.Unlock();
             }
         }
     }

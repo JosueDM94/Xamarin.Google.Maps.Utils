@@ -14,7 +14,7 @@ using Sample.Android.Utils;
 namespace Sample.Android
 {
     [Activity(Label = "ClusteringDemoActivity")]
-    public class ClusteringDemoActivity : BaseDemoActivity, GoogleMap.IInfoWindowAdapter, GoogleMap.IOnInfoWindowClickListener
+    public class ClusteringDemoActivity : BaseDemoActivity
     {
         private ClusterManager mClusterManager;
 
@@ -27,12 +27,6 @@ namespace Sample.Android
 
             mClusterManager = new ClusterManager(this, getMap());
             getMap().SetOnCameraIdleListener(mClusterManager);
-
-            // Add a custom InfoWindowAdapter by setting it to the MarkerManager.Collection object from
-            // ClusterManager rather than from GoogleMap.setInfoWindowAdapter
-            mClusterManager.MarkerCollection.SetOnInfoWindowAdapter(this);
-            mClusterManager.MarkerCollection.SetOnInfoWindowClickListener(this);
-                
 
             try
             {
@@ -49,26 +43,6 @@ namespace Sample.Android
             Stream inputStream = Resources.OpenRawResource(Resource.Raw.radar_search);
             List<MyItem> items = new MyItemReader().read(inputStream);
             mClusterManager.AddItems(items);
-        }
-
-        public View GetInfoContents(Marker marker)
-        {
-            return null;
-        }
-
-        public View GetInfoWindow(Marker marker)
-        {
-            LayoutInflater inflater = LayoutInflater.From(this);
-            View view = inflater.Inflate(Resource.Layout.custom_info_window, null);
-            TextView textView = view.FindViewById<TextView>(Resource.Id.textViewTitle);
-            String text = (marker.Title != null) ? marker.Title : "Cluster Item";
-            textView.Text = text;
-            return view;
-        }
-
-        public void OnInfoWindowClick(Marker marker)
-        {
-            Toast.MakeText(this, "Info window clicked.", ToastLength.Long).Show();
         }
     }
 }

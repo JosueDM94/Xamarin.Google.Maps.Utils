@@ -23,7 +23,7 @@ namespace Sample.iOS
             if (string.IsNullOrEmpty(kMapsAPIKey))
                 throw new Exception("Please provide your own Google Maps Api Key");
 
-            MapServices.ProvideAPIKey(kMapsAPIKey);
+            MapServices.ProvideApiKey(kMapsAPIKey);
             return true;
         }
 
