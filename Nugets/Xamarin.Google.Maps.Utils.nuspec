@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Xamarin.Google.Maps.Utils</id>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <title>Xamarin.Google.Maps.Utils</title>
     <authors>Josué Díaz</authors>
     <owners>Josué Díaz</owners>
@@ -14,7 +14,7 @@
     <description>Set of Xamarin bindings of Google Maps Utility for Xamarin.Android and Xamarin.iOS</description>
     <summary>Set of Xamarin bindings of Google Maps Utility for Xamarin.Android and Xamarin.iOS</summary>
     <releaseNotes>Native Library version:
-[iOS] GoogleMapsUtils 3.0.0
+[iOS] GoogleMapsUtils 3.0.1
 [Android] GoogleMapsUtils 0.6.2</releaseNotes>
     <copyright>Copyright Josué Díaz © 2022</copyright>
     <language>en-US</language>
@@ -31,7 +31,7 @@
       </group>
       <group targetFramework="Xamarin.iOS1.0">
           <!--Xamarin.iOS10 dependencies go here-->
-          <dependency id="Xamarin.Build.Download" version="0.4.11" />
+          <dependency id="Xamarin.Build.Download" version="0.10.0" />
           <dependency id="Xamarin.Google.iOS.Maps" version="3.9.0" />
       </group>
     </dependencies>
