@@ -10,6 +10,7 @@
     <attr path="/api/package[@name='com.google.maps.android.heatmaps']" name="managedName">Android.Gms.Maps.Utils.HeatMaps</attr>
     <attr path="/api/package[@name='com.google.maps.android.projection']" name="managedName">Android.Gms.Maps.Utils.Projection</attr>
     <attr path="/api/package[@name='com.google.maps.android.clustering']" name="managedName">Android.Gms.Maps.Utils.Clustering</attr>
+    <attr path="/api/package[@name='com.google.maps.android.collections']" name="managedName">Android.Gms.Maps.Utils.Collections</attr>
     <attr path="/api/package[@name='com.google.maps.android.data.geojson']" name="managedName">Android.Gms.Maps.Utils.Data.GeoJson</attr>
     <attr path="/api/package[@name='com.google.maps.android.clustering.view']" name="managedName">Android.Gms.Maps.Utils.Clustering.View</attr>
     <attr path="/api/package[@name='com.google.maps.android.clustering.algo']" name="managedName">Android.Gms.Maps.Utils.Clustering.Algorithm</attr>
@@ -47,4 +48,22 @@
           name="managedOverride">override</attr>
     <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/class[@name='NonHierarchicalDistanceBasedAlgorithm']/method[@name='removeItem' and count(parameter)=1 and parameter[1][@type='T']]"
           name="managedOverride">override</attr>
+
+    <!-- Error CS0534: 'ClassName' does not implement inherited abstract member 'ClassName.UpdateItem(Object)' (CS0534)-->
+    <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/interface[@name='Algorithm']/method[@name='updateItem' and count(parameter)=1 and parameter[1][@type='T']]/parameter[1]"
+          name="type">Java.Lang.Object</attr>
+    <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/class[@name='GridBasedAlgorithm']/method[@name='updateItem' and count(parameter)=1 and parameter[1][@type='T']]"
+          name="managedOverride">override</attr>
+    <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/class[@name='ScreenBasedAlgorithmAdapter']/method[@name='updateItem' and count(parameter)=1 and parameter[1][@type='T']]"
+          name="managedOverride">override</attr>
+    <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/class[@name='PreCachingAlgorithmDecorator']/method[@name='updateItem' and count(parameter)=1 and parameter[1][@type='T']]"
+          name="managedOverride">override</attr>
+    <attr path="/api/package[@name='com.google.maps.android.clustering.algo']/class[@name='NonHierarchicalDistanceBasedAlgorithm']/method[@name='updateItem' and count(parameter)=1 and parameter[1][@type='T']]"
+          name="managedOverride">override</attr>
+
+    <!-- Error missing classes and methods -->
+    <attr path="/api/package[@name='com.google.maps.android.collections']/class[@name='MapObjectManager']"
+          name="visibility">protected</attr>
+    <attr path="/api/package[@name='com.google.maps.android.collections']/class[@name='MapObjectManager.Collection']"
+          name="visibility">protected</attr>
 </metadata>
