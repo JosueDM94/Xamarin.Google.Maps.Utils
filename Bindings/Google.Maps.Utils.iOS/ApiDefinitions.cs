@@ -14,8 +14,8 @@ using IGMSMapViewDelegate = Google.Maps.IMapViewDelegate;
 
 namespace Google.Maps.Utils
 {
-    // @protocol GMUClusterItem <NSObject>
-    /*
+	// @protocol GMUClusterItem <NSObject>
+	/*
   Check whether adding [Model] to this declaration is appropriate.
   [Model] is used to generate a C# class that implements this protocol,
   and might be useful for protocols that consumers are supposed to implement,
@@ -24,7 +24,7 @@ namespace Google.Maps.Utils
   protocol, then [Model] is redundant and will generate code that will never
   be used.
 */
-    [Protocol]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	interface GMUClusterItem
 	{
@@ -726,6 +726,9 @@ namespace Google.Maps.Utils
 	[BaseType(typeof(NSObject))]
 	interface GMUNonHierarchicalDistanceBasedAlgorithm : GMUClusterAlgorithm
 	{
+		// -(instancetype)initWithClusterDistancePoints:(NSUInteger)clusterDistancePoints;
+		[Export("initWithClusterDistancePoints:")]
+		IntPtr Constructor(nuint clusterDistancePoints);
 	}
 
 	// @interface GMUPlacemark : NSObject <GMUGeometryContainer>
