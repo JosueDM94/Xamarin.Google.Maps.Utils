@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Xamarin.Google.Maps.Utils</id>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <title>Xamarin.Google.Maps.Utils</title>
     <authors>Josué Díaz</authors>
     <owners>Josué Díaz</owners>
@@ -15,7 +15,7 @@
     <summary>Set of Xamarin bindings of Google Maps Utility for Xamarin.Android and Xamarin.iOS</summary>
     <releaseNotes>Native Library version:
 [iOS] GoogleMapsUtils 3.0.2
-[Android] GoogleMapsUtils 1.0.0</releaseNotes>
+[Android] GoogleMapsUtils 1.0.2</releaseNotes>
     <copyright>Copyright Josué Díaz © 2022</copyright>
     <language>en-US</language>
     <tags>xamarin, ios, android, google, map, maps, utils, utility, heatmap, kml, geo, json, cluster, clustering, marker, pin, location</tags>

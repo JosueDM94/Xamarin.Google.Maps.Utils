@@ -15,7 +15,7 @@
     <!-- Error CS0738: 'MultiGeometry' does not implement interface member 'IGeometry.GeometryObject'. 'MultiGeometry.GeometryObject' cannot implement 'IGeometry.GeometryObject' because it does not have the matching return type of 'Object'. -->
     <mapping jni-class="com/google/maps/android/data/MultiGeometry">
         <method jni-name="getGeometryObject" parameter="return" clr-enum-type="Java.Lang.Object"/>
-    </mapping>    
+    </mapping>
     <!-- Error CS0738: 'GeoJsonPolygon' does not implement interface member 'IGeometry.GeometryObject'. 'GeoJsonPolygon.GeometryObject' cannot implement 'IGeometry.GeometryObject' because it does not have the matching return type of 'Object'. -->
     <mapping jni-class="com/google/maps/android/data/geojson/GeoJsonPolygon">
         <method jni-name="getGeometryObject" parameter="return" clr-enum-type="Java.Lang.Object"/>
