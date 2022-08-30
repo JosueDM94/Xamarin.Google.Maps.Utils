@@ -36,7 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>0618,0114</NoWarn>
+    <NoWarn>0618,0114;CS1573;CS1591;CS1572</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -67,13 +67,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\android-maps-utils-2.2.0.aar" />
+    <LibraryProjectZip Include="Jars\android-maps-utils-2.2.1.aar" />
   </ItemGroup>
   <ItemGroup>
-    <JavaSourceJar Include="Jars\android-maps-utils-2.2.0-sources.jar" />
-  </ItemGroup>
-  <ItemGroup>
-    <JavaDocJar Include="Jars\android-maps-utils-2.2.0-javadoc.jar" />
+    <JavaSourceJar Include="Jars\android-maps-utils-2.2.1-sources.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
