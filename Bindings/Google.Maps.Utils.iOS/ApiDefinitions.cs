@@ -214,6 +214,10 @@ namespace Google.Maps.Utils
         [NullAllowed, Export("mapDelegate", ArgumentSemantic.Weak)]
         NSObject WeakMapDelegate { get; }
 
+        // -(void)setMapDelegate:(id<GMSMapViewDelegate> _Nullable)mapDelegate;
+        [Export("setMapDelegate:")]
+        void SetMapDelegate([NullAllowed] IGMSMapViewDelegate mapDelegate);
+
         // -(void)setDelegate:(id<GMUClusterManagerDelegate> _Nullable)delegate mapDelegate:(id<GMSMapViewDelegate> _Nullable)mapDelegate;
         [Export("setDelegate:mapDelegate:")]
         void SetDelegate([NullAllowed] IGMUClusterManagerDelegate @delegate, [NullAllowed] IGMSMapViewDelegate mapDelegate);
