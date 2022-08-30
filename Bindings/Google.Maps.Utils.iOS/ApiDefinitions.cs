@@ -7,7 +7,6 @@ using UIKit;
 using GMSCoordinateBounds = Google.Maps.CoordinateBounds;
 using GMSMapView = Google.Maps.MapView;
 using GMSMarker = Google.Maps.Marker;
-using GMSOverlay = Google.Maps.Overlay;
 using GMSPath = Google.Maps.Path;
 using GMSSyncTileLayer = Google.Maps.SyncTileLayer;
 using IGMSMapViewDelegate = Google.Maps.IMapViewDelegate;
@@ -32,9 +31,24 @@ namespace Google.Maps.Utils
 		[Abstract]
 		[Export("position")]
 		CLLocationCoordinate2D Position { get; }
+
+		// @optional @property (readonly, nonatomic) NSString * _Nullable title;
+		[NullAllowed, Export("title")]
+		string Title { get; }
+
+		// @optional @property (readonly, nonatomic) NSString * _Nullable snippet;
+		[NullAllowed, Export("snippet")]
+		string Snippet { get; }
 	}
 
 	interface IGMUClusterItem { }
+
+	// @interface GMSMarker_GMUClusteritem (GMSMarker) <GMUClusterItem>
+	//[Category]
+	//[BaseType(typeof(GMSMarker))]
+	//interface GMSMarker_GMUClusteritem : GMUClusterItem
+	//{
+	//}
 
 	// @protocol GMUCluster <NSObject>
 	/*
@@ -541,17 +555,6 @@ namespace Google.Maps.Utils
 		// -(void)clear;
 		[Export("clear")]
 		void Clear();
-	}
-
-	// @interface Testing (GMUGeometryRenderer)
-	[Category]
-	[BaseType(typeof(GMUGeometryRenderer))]
-	interface GMUGeometryRendererTesting
-	{
-		// -(NSArray<GMSOverlay *> *)mapOverlays;
-		[Export("mapOverlays")]
-		//[Verify(MethodToProperty)]
-		GMSOverlay[] MapOverlays();
 	}
 
 	// @interface GMUGradient : NSObject
