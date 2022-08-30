@@ -67,10 +67,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\android-maps-utils-2.3.0.aar" />
+    <LibraryProjectZip Include="Jars\android-maps-utils-2.4.0.aar" />
   </ItemGroup>
   <ItemGroup>
-    <JavaSourceJar Include="Jars\android-maps-utils-2.3.0-sources.jar" />
+    <JavaSourceJar Include="Jars\android-maps-utils-2.4.0-sources.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
