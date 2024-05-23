@@ -4,7 +4,7 @@ using Android.Gms.Maps.Model;
 using Android.Gms.Maps.Utils.UI;
 using Android.Graphics;
 using Android.Text;
-using Android.Text.Style;
+using StyleSpan = Android.Text.Style.StyleSpan;
 
 namespace Sample.Android
 {

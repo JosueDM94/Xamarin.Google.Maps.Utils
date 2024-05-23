@@ -1,5 +1,6 @@
 ﻿using Android.Gms.Maps.Model;
 using Android.Gms.Maps.Utils.Clustering;
+using Java.Lang;
 
 namespace Sample.Android.Models
 {
@@ -8,6 +9,7 @@ namespace Sample.Android.Models
         private LatLng mPosition;
         private string mTitle;
         private string mSnippet;
+        private Float zIndex;
 
         public MyItem(double lat, double lng)
         {
@@ -28,6 +30,7 @@ namespace Sample.Android.Models
         public string Snippet => mTitle;
 
         public string Title => mSnippet;
+        public Float ZIndex => zIndex;
 
         /**
          * Set the title of the marker
@@ -45,6 +48,15 @@ namespace Sample.Android.Models
         public void SetSnippet(string snippet)
         {
             mSnippet = snippet;
+        }
+        
+        /**
+         * Set the z-index of the marker
+         * @param zIndex float to be set as z-index
+         */
+        public void SetZIndex(Float zIndex)
+        {
+            zIndex = zIndex;
         }
     }
 }

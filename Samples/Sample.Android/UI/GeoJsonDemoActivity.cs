@@ -72,7 +72,7 @@ namespace Sample.Android
                 GeoJsonLayer layer = new GeoJsonLayer(getMap(), Resource.Raw.earthquakes_with_usa, this);
                 addGeoJsonLayerToMap(layer);
             }
-            catch (IOException)
+            catch (Java.IO.IOException)
             {
                 Log.Error(mLogTag, "GeoJSON file could not be read");
             }

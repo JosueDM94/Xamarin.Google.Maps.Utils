@@ -233,7 +233,7 @@ namespace Sample.Android
                 Toast.MakeText(this, "Error processing Places API URL", ToastLength.Short).Show();
                 return null;
             }
-            catch (IOException)
+            catch (Java.IO.IOException)
             {
                 Toast.MakeText(this, "Error connecting to Places API", ToastLength.Short).Show();
                 return null;

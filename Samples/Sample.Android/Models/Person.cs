@@ -1,5 +1,6 @@
 ﻿using Android.Gms.Maps.Model;
 using Android.Gms.Maps.Utils.Clustering;
+using Java.Lang;
 
 namespace Sample.Android.Models
 {
@@ -21,5 +22,7 @@ namespace Sample.Android.Models
         public string Snippet => null;
 
         public string Title => null;
+        
+        public Float? ZIndex => null;
     }
 }
