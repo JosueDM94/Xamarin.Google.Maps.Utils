@@ -4,6 +4,8 @@
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <OutputType>Exe</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <ApplicationTitle>Maps Utils Demo</ApplicationTitle>
     <ApplicationId>com.jdiaz.gmapsutils</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

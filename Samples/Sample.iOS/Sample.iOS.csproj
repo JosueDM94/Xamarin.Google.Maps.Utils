@@ -4,6 +4,11 @@
     <OutputType>Exe</OutputType>
     <ImplicitUsings>true</ImplicitUsings>
     <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
+
+	<ApplicationTitle>Maps Utils Demo</ApplicationTitle>
+    <ApplicationId>com.jdiaz.gmapsutils</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -14,6 +19,7 @@
 	<CodesignProvision>Automatic</CodesignProvision>
 	<CodesignKey>iPhone Developer</CodesignKey>
 	<MtouchLink>None</MtouchLink>
+	<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -24,6 +30,7 @@
 	<CodesignProvision>Automatic</CodesignProvision>
 	<CodesignKey>iPhone Distribution</CodesignKey>
 	<MtouchLink>SdkOnly</MtouchLink>
+	<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
 
   <ItemGroup>
