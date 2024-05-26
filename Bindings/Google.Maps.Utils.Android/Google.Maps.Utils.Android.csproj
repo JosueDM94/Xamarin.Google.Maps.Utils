@@ -3,11 +3,9 @@
     <TargetFramework>net8.0-android</TargetFramework>
     <IsBindingProject>true</IsBindingProject>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>false</ImplicitUsings>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AndroidGenerateResourceDesigner>false</AndroidGenerateResourceDesigner>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\android-maps-utils-3.8.2.aar" />
     <JavaDocJar Include="Jars\android-maps-utils-3.8.2-javadoc.jar" />
     <JavaSourceJar Include="Jars\android-maps-utils-3.8.2-sources.jar" />
   </ItemGroup>

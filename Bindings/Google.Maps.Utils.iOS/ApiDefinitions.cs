@@ -1,9 +1,9 @@
-using System;
 using CoreGraphics;
 using CoreLocation;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
+using System.Runtime.InteropServices;
 using GMSCoordinateBounds = Google.Maps.CoordinateBounds;
 using GMSMapView = Google.Maps.MapView;
 using GMSMarker = Google.Maps.Marker;
@@ -192,7 +192,7 @@ namespace Google.Maps.Utils
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)mapView algorithm:(id<GMUClusterAlgorithm> _Nonnull)algorithm renderer:(id<GMUClusterRenderer> _Nonnull)renderer __attribute__((objc_designated_initializer));
         [Export("initWithMap:algorithm:renderer:")]
         [DesignatedInitializer]
-        IntPtr Constructor(GMSMapView mapView, IGMUClusterAlgorithm algorithm, IGMUClusterRenderer renderer);
+        NativeHandle Constructor(GMSMapView mapView, IGMUClusterAlgorithm algorithm, IGMUClusterRenderer renderer);
 
         // @property (readonly, nonatomic) id<GMUClusterAlgorithm> _Nonnull algorithm;
         [Export("algorithm")]
@@ -260,15 +260,15 @@ namespace Google.Maps.Utils
     {
         // -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets;
         [Export("initWithBuckets:")]
-        IntPtr Constructor(NSNumber[] buckets);
+        NativeHandle Constructor(NSNumber[] buckets);
 
         // -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets backgroundImages:(NSArray<UIImage *> * _Nonnull)backgroundImages;
         [Export("initWithBuckets:backgroundImages:")]
-        IntPtr Constructor(NSNumber[] buckets, UIImage[] backgroundImages);
+        NativeHandle Constructor(NSNumber[] buckets, UIImage[] backgroundImages);
 
         // -(instancetype _Nonnull)initWithBuckets:(NSArray<NSNumber *> * _Nonnull)buckets backgroundColors:(NSArray<UIColor *> * _Nonnull)backgroundColors;
         [Export("initWithBuckets:backgroundColors:")]
-        IntPtr Constructor(NSNumber[] buckets, UIColor[] backgroundColors);
+        NativeHandle Constructor(NSNumber[] buckets, UIColor[] backgroundColors);
 
         // -(UIImage * _Nonnull)iconForSize:(NSUInteger)size;
         [Export("iconForSize:")]
@@ -302,7 +302,7 @@ namespace Google.Maps.Utils
     {
         // -(instancetype _Nonnull)initWithMapView:(GMSMapView * _Nonnull)mapView clusterIconGenerator:(id<GMUClusterIconGenerator> _Nonnull)iconGenerator;
         [Export("initWithMapView:clusterIconGenerator:")]
-        IntPtr Constructor(GMSMapView mapView, IGMUClusterIconGenerator iconGenerator);
+        NativeHandle Constructor(GMSMapView mapView, IGMUClusterIconGenerator iconGenerator);
 
         // @property (nonatomic) BOOL animatesClusters;
         [Export("animatesClusters")]
@@ -413,7 +413,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithStyleID:(NSString * _Nonnull)styleID strokeColor:(UIColor * _Nullable)strokeColor fillColor:(UIColor * _Nullable)fillColor width:(CGFloat)width scale:(CGFloat)scale heading:(CGFloat)heading anchor:(CGPoint)anchor iconUrl:(NSString * _Nullable)iconUrl title:(NSString * _Nullable)title hasFill:(BOOL)hasFill hasStroke:(BOOL)hasStroke;
         [Export("initWithStyleID:strokeColor:fillColor:width:scale:heading:anchor:iconUrl:title:hasFill:hasStroke:")]
-        IntPtr Constructor(string styleID, [NullAllowed] UIColor strokeColor, [NullAllowed] UIColor fillColor, nfloat width, nfloat scale, nfloat heading, CGPoint anchor, [NullAllowed] string iconUrl, [NullAllowed] string title, bool hasFill, bool hasStroke);
+        NativeHandle Constructor(string styleID, [NullAllowed] UIColor strokeColor, [NullAllowed] UIColor fillColor, nfloat width, nfloat scale, nfloat heading, CGPoint anchor, [NullAllowed] string iconUrl, [NullAllowed] string title, bool hasFill, bool hasStroke);
     }
 
     // @protocol GMUGeometryContainer <NSObject>
@@ -461,7 +461,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithGeometry:(id<GMUGeometry> _Nonnull)geometry identifier:(NSString * _Nullable)identifier properties:(NSDictionary<NSString *,NSObject *> * _Nullable)properties boundingBox:(GMSCoordinateBounds * _Nullable)boundingBox;
         [Export("initWithGeometry:identifier:properties:boundingBox:")]
-        IntPtr Constructor(IGMUGeometry geometry, [NullAllowed] string identifier, [NullAllowed] NSDictionary<NSString, NSObject> properties, [NullAllowed] GMSCoordinateBounds boundingBox);
+        NativeHandle Constructor(IGMUGeometry geometry, [NullAllowed] string identifier, [NullAllowed] NSDictionary<NSString, NSObject> properties, [NullAllowed] GMSCoordinateBounds boundingBox);
     }
 
     // @interface GMUGeoJSONParser : NSObject
@@ -474,15 +474,15 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithURL:(NSURL * _Nonnull)url;
         [Export("initWithURL:")]
-        IntPtr Constructor(NSUrl url);
+        NativeHandle Constructor(NSUrl url);
 
         // -(instancetype _Nonnull)initWithData:(NSData * _Nonnull)data;
         [Export("initWithData:")]
-        IntPtr Constructor(NSData data);
+        NativeHandle Constructor(NSData data);
 
         // -(instancetype _Nonnull)initWithStream:(NSInputStream * _Nonnull)stream;
         [Export("initWithStream:")]
-        IntPtr Constructor(NSInputStream stream);
+        NativeHandle Constructor(NSInputStream stream);
 
         // -(void)parse;
         [Export("parse")]
@@ -499,7 +499,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithGeometries:(NSArray<id<GMUGeometry>> * _Nonnull)geometries;
         [Export("initWithGeometries:")]
-        IntPtr Constructor(IGMUGeometry[] geometries);
+        NativeHandle Constructor(IGMUGeometry[] geometries);
     }
 
     // @interface GMUPair : NSObject
@@ -516,7 +516,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithKey:(NSString * _Nonnull)styleID styleUrl:(NSString * _Nonnull)strokeColor;
         [Export("initWithKey:styleUrl:")]
-        IntPtr Constructor(string styleID, string strokeColor);
+        NativeHandle Constructor(string styleID, string strokeColor);
     }
 
     // @interface GMUStyleMap : NSObject
@@ -533,7 +533,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithId:(NSString * _Nonnull)styleMapId pairs:(NSArray<GMUPair *> * _Nonnull)pairs;
         [Export("initWithId:pairs:")]
-        IntPtr Constructor(string styleMapId, GMUPair[] pairs);
+        NativeHandle Constructor(string styleMapId, GMUPair[] pairs);
     }
 
     // @interface GMUGeometryRenderer : NSObject
@@ -542,15 +542,15 @@ namespace Google.Maps.Utils
     {
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)map geometries:(NSArray<id<GMUGeometryContainer>> * _Nonnull)geometries;
         [Export("initWithMap:geometries:")]
-        IntPtr Constructor(GMSMapView map, IGMUGeometryContainer[] geometries);
+        NativeHandle Constructor(GMSMapView map, IGMUGeometryContainer[] geometries);
 
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)map geometries:(NSArray<id<GMUGeometryContainer>> * _Nonnull)geometries styles:(NSArray<GMUStyle *> * _Nullable)styles;
         [Export("initWithMap:geometries:styles:")]
-        IntPtr Constructor(GMSMapView map, IGMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles);
+        NativeHandle Constructor(GMSMapView map, IGMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles);
 
         // -(instancetype _Nonnull)initWithMap:(GMSMapView * _Nonnull)map geometries:(NSArray<id<GMUGeometryContainer>> * _Nonnull)geometries styles:(NSArray<GMUStyle *> * _Nullable)styles styleMaps:(NSArray<GMUStyleMap *> * _Nullable)styleMaps;
         [Export("initWithMap:geometries:styles:styleMaps:")]
-        IntPtr Constructor(GMSMapView map, IGMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles, [NullAllowed] GMUStyleMap[] styleMaps);
+        NativeHandle Constructor(GMSMapView map, IGMUGeometryContainer[] geometries, [NullAllowed] GMUStyle[] styles, [NullAllowed] GMUStyleMap[] styleMaps);
 
         // -(void)render;
         [Export("render")]
@@ -579,7 +579,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithColors:(NSArray<UIColor *> * _Nonnull)colors startPoints:(NSArray<NSNumber *> * _Nonnull)startPoints colorMapSize:(NSUInteger)mapSize;
         [Export("initWithColors:startPoints:colorMapSize:")]
-        IntPtr Constructor(UIColor[] colors, NSNumber[] startPoints, nuint mapSize);
+        NativeHandle Constructor(UIColor[] colors, NSNumber[] startPoints, nuint mapSize);
 
         // -(NSArray<UIColor *> * _Nonnull)generateColorMap;
         [Export("generateColorMap")]
@@ -619,7 +619,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithCoordinate:(CLLocationCoordinate2D)northEast southWest:(CLLocationCoordinate2D)southWest zIndex:(int)zIndex rotation:(double)rotation href:(NSString * _Nonnull)href;
         [Export("initWithCoordinate:southWest:zIndex:rotation:href:")]
-        IntPtr Constructor(CLLocationCoordinate2D northEast, CLLocationCoordinate2D southWest, int zIndex, double rotation, string href);
+        NativeHandle Constructor(CLLocationCoordinate2D northEast, CLLocationCoordinate2D southWest, int zIndex, double rotation, string href);
     }
 
     // @protocol GQTPointQuadTreeItem <NSObject>
@@ -655,7 +655,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithCoordinate:(CLLocationCoordinate2D)coordinate intensity:(float)intensity;
         [Export("initWithCoordinate:intensity:")]
-        IntPtr Constructor(CLLocationCoordinate2D coordinate, float intensity);
+        NativeHandle Constructor(CLLocationCoordinate2D coordinate, float intensity);
     }
 
     // @interface GMUHeatmapTileLayer : GMSSyncTileLayer
@@ -705,15 +705,15 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithURL:(NSURL * _Nonnull)url;
         [Export("initWithURL:")]
-        IntPtr Constructor(NSUrl url);
+        NativeHandle Constructor(NSUrl url);
 
         // -(instancetype _Nonnull)initWithData:(NSData * _Nonnull)data;
         [Export("initWithData:")]
-        IntPtr Constructor(NSData data);
+        NativeHandle Constructor(NSData data);
 
         // -(instancetype _Nonnull)initWithStream:(NSInputStream * _Nonnull)stream;
         [Export("initWithStream:")]
-        IntPtr Constructor(NSInputStream stream);
+        NativeHandle Constructor(NSInputStream stream);
     }
 
     // @interface GMULineString : NSObject <GMUGeometry>
@@ -726,7 +726,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithPath:(GMSPath * _Nonnull)path;
         [Export("initWithPath:")]
-        IntPtr Constructor(GMSPath path);
+        NativeHandle Constructor(GMSPath path);
     }
 
     // @interface GMUNonHierarchicalDistanceBasedAlgorithm : NSObject <GMUClusterAlgorithm>
@@ -735,7 +735,7 @@ namespace Google.Maps.Utils
     {
         // -(instancetype)initWithClusterDistancePoints:(NSUInteger)clusterDistancePoints;
         [Export("initWithClusterDistancePoints:")]
-        IntPtr Constructor(nuint clusterDistancePoints);
+        NativeHandle Constructor(nuint clusterDistancePoints);
     }
 
     // @interface GMUPlacemark : NSObject <GMUGeometryContainer>
@@ -756,7 +756,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithGeometry:(id<GMUGeometry> _Nullable)geometry title:(NSString * _Nullable)title snippet:(NSString * _Nullable)snippet style:(GMUStyle * _Nullable)style styleUrl:(NSString * _Nullable)styleUrl;
         [Export("initWithGeometry:title:snippet:style:styleUrl:")]
-        IntPtr Constructor([NullAllowed] IGMUGeometry geometry, [NullAllowed] string title, [NullAllowed] string snippet, [NullAllowed] GMUStyle style, [NullAllowed] string styleUrl);
+        NativeHandle Constructor([NullAllowed] IGMUGeometry geometry, [NullAllowed] string title, [NullAllowed] string snippet, [NullAllowed] GMUStyle style, [NullAllowed] string styleUrl);
     }
 
     // @interface GMUPoint : NSObject <GMUGeometry>
@@ -769,7 +769,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
         [Export("initWithCoordinate:")]
-        IntPtr Constructor(CLLocationCoordinate2D coordinate);
+        NativeHandle Constructor(CLLocationCoordinate2D coordinate);
     }
 
     // @interface GMUPolygon : NSObject <GMUGeometry>
@@ -782,7 +782,7 @@ namespace Google.Maps.Utils
 
         // -(instancetype _Nonnull)initWithPaths:(NSArray<GMSPath *> * _Nonnull)paths;
         [Export("initWithPaths:")]
-        IntPtr Constructor(GMSPath[] paths);
+        NativeHandle Constructor(GMSPath[] paths);
     }
 
     // @interface GMUSimpleClusterAlgorithm : NSObject <GMUClusterAlgorithm>
@@ -799,7 +799,7 @@ namespace Google.Maps.Utils
         // -(instancetype _Nonnull)initWithPosition:(CLLocationCoordinate2D)position __attribute__((objc_designated_initializer));
         [Export("initWithPosition:")]
         [DesignatedInitializer]
-        IntPtr Constructor(CLLocationCoordinate2D position);
+        NativeHandle Constructor(CLLocationCoordinate2D position);
 
         // @property (readonly, nonatomic) CLLocationCoordinate2D position;
         [Export("position")]
@@ -828,7 +828,7 @@ namespace Google.Maps.Utils
     {
         // -(instancetype)initWithObject:(id)object;
         [Export("initWithObject:")]
-        IntPtr Constructor(NSObject @object);
+        NativeHandle Constructor(NSObject @object);
     }
 
     // @interface GQTPointQuadTree : NSObject
@@ -837,7 +837,7 @@ namespace Google.Maps.Utils
     {
         // -(id)initWithBounds:(GQTBounds)bounds;
         [Export("initWithBounds:")]
-        IntPtr Constructor(GQTBounds bounds);
+        NativeHandle Constructor(GQTBounds bounds);
 
         // -(BOOL)add:(id<GQTPointQuadTreeItem>)item;
         [Export("add:")]
@@ -892,7 +892,7 @@ namespace Google.Maps.Utils
         double GoogleMapsUtilsVersionNumber { get; }
 
         // extern const unsigned char [] GoogleMapsUtilsVersionString;
-        [Field("GoogleMapsUtilsVersionString", "__Internal")]
-        IntPtr GoogleMapsUtilsVersionString { get; }
+        //[Field("GoogleMapsUtilsVersionString", "__Internal")]
+        //NativeHandle GoogleMapsUtilsVersionString { get; }
     }
 }
