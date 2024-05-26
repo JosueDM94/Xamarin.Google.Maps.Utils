@@ -42,11 +42,12 @@
     <!-- iOS reference assemblies -->
     <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.dll" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.dll" />
     <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.xml" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.xml" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.resources" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.resources" />
+    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.resources/**" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.resources" />
 
     <!-- Android reference assemblies -->
     <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.dll" target="lib/net8.0-android34.0/Google.Maps.Utils.Android.dll" />
     <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.xml" target="lib/net8.0-android34.0/Google.Maps.Utils.Android.xml" />
     <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.aar" target="lib/net8.0-android34.0/Google.Maps.Utils.Android.aar" />
+    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/android-maps-utils-3.8.2.aar" target="lib/net8.0-android34.0/android-maps-utils-3.8.2.aar" />
   </files>
 </package>

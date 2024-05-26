@@ -4,6 +4,7 @@
     <IsBindingProject>true</IsBindingProject>
     <Nullable>disable</Nullable>
     <ImplicitUsings>false</ImplicitUsings>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
