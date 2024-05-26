@@ -6,10 +6,12 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>false</ImplicitUsings>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AndroidGenerateResourceDesigner>true</AndroidGenerateResourceDesigner>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.GooglePlayServices.Maps" Version="118.2.0.3" />
+    <PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8" Version="1.9.23.1" />
   </ItemGroup>
 
   <ItemGroup>

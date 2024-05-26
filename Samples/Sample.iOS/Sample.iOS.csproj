@@ -39,7 +39,16 @@
     <PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Bindings\Google.Maps.Utils.iOS\Google.Maps.Utils.iOS.csproj" />
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="Google.Maps.Utils.iOS">
+      <HintPath>..\..\Bindings\Google.Maps.Utils.iOS\bin\Debug\net8.0-ios\Google.Maps.Utils.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="Google.Maps.Utils.iOS">
+      <HintPath>..\..\Bindings\Google.Maps.Utils.iOS\bin\Release\net8.0-ios\Google.Maps.Utils.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

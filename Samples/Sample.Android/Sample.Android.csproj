@@ -30,8 +30,16 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Maps" Version="118.2.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Bindings\Google.Maps.Utils.Android\Google.Maps.Utils.Android.csproj" />
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="Google.Maps.Utils.Android">
+      <HintPath>..\..\Bindings\Google.Maps.Utils.Android\bin\Debug\net8.0-android\Google.Maps.Utils.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="Google.Maps.Utils.Android">
+      <HintPath>..\..\Bindings\Google.Maps.Utils.Android\bin\Release\net8.0-android\Google.Maps.Utils.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
