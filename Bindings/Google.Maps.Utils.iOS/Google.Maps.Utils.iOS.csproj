@@ -2,9 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0-ios</TargetFramework>
     <IsBindingProject>true</IsBindingProject>
-    <Nullable>disable</Nullable>
-    <ImplicitUsings>false</ImplicitUsings>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SupportedOSPlatformVersion>11.0</SupportedOSPlatformVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 

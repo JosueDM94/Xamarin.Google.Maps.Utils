@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<CreatePackage>false</CreatePackage>
+    <CreatePackage>false</CreatePackage>
 	<UseInterpreter>true</UseInterpreter>
 	<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 	<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
@@ -39,16 +39,7 @@
     <PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Reference Include="Google.Maps.Utils.iOS">
-      <HintPath>..\..\Bindings\Google.Maps.Utils.iOS\bin\Debug\net8.0-ios\Google.Maps.Utils.iOS.dll</HintPath>
-    </Reference>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bindings\Google.Maps.Utils.iOS\Google.Maps.Utils.iOS.csproj" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Reference Include="Google.Maps.Utils.iOS">
-      <HintPath>..\..\Bindings\Google.Maps.Utils.iOS\bin\Release\net8.0-ios\Google.Maps.Utils.iOS.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
