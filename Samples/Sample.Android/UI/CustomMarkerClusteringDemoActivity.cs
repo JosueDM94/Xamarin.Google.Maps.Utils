@@ -61,12 +61,12 @@ namespace Sample.Android
                 markerOptions.SetIcon(getItemIcon(person)).SetTitle(person.name);
             }
 
-            //public void OnClusterItemUpdated(Person person, Marker marker)
-            //{
-            //    // Same implementation as onBeforeClusterItemRendered() (to update cached markers)
-            //    marker.SetIcon(getItemIcon(person));
-            //    marker.Title = person.Name;
-            //}
+            public void OnClusterItemUpdated(Person person, Marker marker)
+            {
+                // Same implementation as onBeforeClusterItemRendered() (to update cached markers)
+                marker.SetIcon(getItemIcon(person));
+                marker.Title = person.name;
+            }
 
             /**
              * Get a descriptor for a single person (i.e., a marker outside a cluster) from their
@@ -89,11 +89,11 @@ namespace Sample.Android
                 markerOptions.SetIcon(getClusterIcon(cluster));
             }
 
-            //protected override void OnClusterUpdated(ICluster cluster, Marker marker)
-            //{
-            //    // Same implementation as onBeforeClusterRendered() (to update cached markers)
-            //    marker.SetIcon(getClusterIcon(cluster));
-            //}
+            protected override void OnClusterUpdated(ICluster cluster, Marker marker)
+            {
+                // Same implementation as onBeforeClusterRendered() (to update cached markers)
+                marker.SetIcon(getClusterIcon(cluster));
+            }
 
             /**
              * Get a descriptor for multiple people (a cluster) to be used for a marker icon. Note: this
