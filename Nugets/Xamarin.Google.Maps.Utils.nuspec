@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Xamarin.Google.Maps.Utils</id>
-    <version>1.3.8</version>
+    <version>1.3.9</version>
     <title>Xamarin.Google.Maps.Utils</title>
     <authors>Josué Díaz</authors>
     <owners>Josué Díaz</owners>
@@ -16,7 +16,7 @@
     <releaseNotes>Native Library version:
 [iOS] GoogleMapsUtils 3.2.1
 [Android] GoogleMapsUtils 3.8.2</releaseNotes>
-    <copyright>Copyright Josué Díaz © 2022</copyright>
+    <copyright>Copyright Josué Díaz © 2024</copyright>
     <language>en-US</language>
     <tags>maui, .net, ios, android, google, map, maps, utils, utility, heatmap, kml, geo, json, cluster, clustering, marker, pin, location</tags>
     <readme>README.md</readme>
@@ -29,24 +29,24 @@
       </group>
       <group targetFramework="net8.0-ios17.2">
         <dependency id="Xamarin.Build.Download" version="0.11.4" />
-        <dependency id="Xamarin.Google.iOS.Maps" version="6.0.1.1" />
+        <dependency id="AdamE.Google.iOS.Maps" version="9.1.1.2" />
       </group>
     </dependencies>
   </metadata>
   <files>
     <!-- NuGet reference assemblies -->
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/LICENSE" target="LICENSE" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/icon.png" target="icon.png" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/README.md" target="README.md" />
+    <file src="../LICENSE" target="LICENSE" />
+    <file src="../icon.png" target="icon.png" />
+    <file src="../README.md" target="README.md" />
 
     <!-- iOS reference assemblies -->
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.dll" target="lib/net8.0-ios17.2" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.xml" target="lib/net8.0-ios17.2" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.resources/" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.resources" />
+    <file src="../Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.dll" target="lib/net8.0-ios17.2" />
+    <file src="../Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.xml" target="lib/net8.0-ios17.2" />
+    <file src="../Bindings/Google.Maps.Utils.iOS/bin/Release/net8.0-ios/Google.Maps.Utils.iOS.resources/" target="lib/net8.0-ios17.2/Google.Maps.Utils.iOS.resources" />
 
     <!-- Android reference assemblies -->
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.dll" target="lib/net8.0-android34.0" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.xml" target="lib/net8.0-android34.0" />
-    <file src="/Users/josue/Projects/Bindings/Xamarin.Google.Maps.Utils/Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/android-maps-utils.aar" target="lib/net8.0-android34.0" />
+    <file src="../Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.dll" target="lib/net8.0-android34.0" />
+    <file src="../Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/Google.Maps.Utils.Android.xml" target="lib/net8.0-android34.0" />
+    <file src="../Bindings/Google.Maps.Utils.Android/bin/Release/net8.0-android/android-maps-utils.aar" target="lib/net8.0-android34.0" />
   </files>
 </package>
